@@ -1,0 +1,29 @@
+.hidden {
+	display: none;
+}
+
+#topbar {
+	-webkit-app-region: drag;
+	background: #ffa000;
+	position: fixed;
+	width: 100%;
+}
+
+#topbad div {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+#topbar button {
+	-webkit-app-region: no-drag;
+}
+
+#navigation {
+	border-right: 1px solid black;
+}
+
+#splash {
+	background-color: #261302;
+	color: #AC7301;
+	-webkit-user-select: none;
+}

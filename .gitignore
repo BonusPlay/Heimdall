@@ -1,0 +1,9 @@
+# Folders
+/.idea
+/dist
+/node_modules
+
+# Files
+yarn.lock
+
+# Extensions

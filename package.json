@@ -1,0 +1,28 @@
+{
+	"name": "Heimdall",
+	"version": "0.3.0",
+	"description": "An application updater for Bonus applications.",
+	"main": "main.js",
+	"repository": "https://github.com/BonusPlay/Heimdall",
+	"author": {
+		"name": "BonusPlay",
+		"email": "root@bonusplay.pl",
+		"url": "https://bonusplay.pl"
+	},
+	"license": "See LICENSE file.",
+	"private": true,
+	"scripts": {
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder"
+	},
+	"devDependencies": {
+		"electron": "^1.7.5",
+		"electron-builder": "^19.24.1"
+	},
+	"dependencies": {
+		"bootstrap": "4.0.0-beta",
+		"font-awesome": "^4.7.0",
+		"jquery": "^3.2.1"
+	}
+}
