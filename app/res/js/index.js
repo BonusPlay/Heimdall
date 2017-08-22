@@ -1,49 +1,54 @@
 const remote = require('electron').remote;
 
-function closeWindow() {
-	remote.getCurrentWindow().close();
-}
+let vm = new Vue({
+	el: '#app',
+	data: {
+		"maximized": false,
 
-function maximizeWindow() {
-	let window = remote.getCurrentWindow();
-	let i = $('#topbar').find('> button:nth-child(2) > i');
+		"isVisibleTopbar": false,
+		"isVisibleMain": false,
+		"isVisibleSplash": true
+	},
+	methods: {
+		minimizeWindow: function() {
+			remote.getCurrentWindow().minimize();
+		},
+		closeWindow: function() {
+			remote.getCurrentWindow().close();
+		},
+		maximizeWindow: function () {
+			let window = remote.getCurrentWindow();
 
-	if (!window.isMaximized())
-	{
-		window.maximize();
-		i.removeClass('fa-window-maximize');
-		i.addClass('fa-window-restore');
+			if (!window.isMaximized())
+			{
+				window.maximize();
+				this.maximized = true;
+			}
+			else
+			{
+				window.unmaximize();
+				this.maximized = false;
+			}
+		},
+		showSplash: function() {
+			remote.getCurrentWindow().setSize(400, 200, false);
+			remote.getCurrentWindow().setResizable(false);
+			this.isVisibleTopbar = false;
+			this.isVisibleMain = false;
+			this.isVisibleSplash = true;
+		},
+		showMain: function() {
+			remote.getCurrentWindow().setSize(900, 600, false);
+			remote.getCurrentWindow().setResizable(true);
+			this.isVisibleTopbar = true;
+			this.isVisibleMain = true;
+			this.isVisibleSplash = false;
+		}
 	}
-	else
-	{
-		window.unmaximize();
-		i.removeClass('fa-window-restore');
-		i.addClass('fa-window-maximize');
-	}
-}
-
-function minimizeWindow() {
-	remote.getCurrentWindow().minimize();
-}
-
-function showSplash() {
-	remote.getCurrentWindow().setSize(400, 200, false);
-	remote.getCurrentWindow().setResizable(false);
-	$('#topbar').addClass('hidden');
-	$('#main').addClass('hidden');
-	$('#splash').removeClass('hidden');
-}
-
-function showMain() {
-	remote.getCurrentWindow().setSize(900, 600, false);
-	remote.getCurrentWindow().setResizable(true);
-	$('#topbar').removeClass('hidden');
-	$('#main').removeClass('hidden');
-	$('#splash').addClass('hidden');
-}
+});
 
 $( document ).ready(function() {
 	setTimeout(function() {
-		showMain();
+		vm.showMain();
 	}, 3000);
 });
