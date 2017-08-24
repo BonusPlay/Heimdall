@@ -21,7 +21,7 @@ html.h-100(lang="en")
 					button.nav-item.btn.btn-outline-danger(type="button", v-on:click="closeWindow")
 						i.fa.fa-window-close-o
 			main.container-fluid.h-100.p-0
-				#main.row.h-100.w-100.m-0.p-0(v-if="isVisibleMain")
+				#main.row.h-100.w-100.m-0(v-if="isVisibleMain")
 					#main-navigation.col-3(style="background:red")
 						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et massa lorem. Donec bibendum, erat non tincidunt fringilla, ipsum lacus mattis erat, vel tincidunt ligula mi eu tortor. Nulla accumsan enim lorem, sit amet pulvinar ligula imperdiet ac. Aliquam a magna aliquam, elementum enim nec, posuere sapien. Morbi rutrum massa ut libero fermentum, vitae mattis nisi hendrerit. Nullam sit amet varius lacus, sed blandit mauris. Vestibulum lectus lectus, placerat sit amet justo a, euismod pretium arcu. Nunc tincidunt, orci a lacinia tristique, purus purus lobortis risus, sit amet mattis nisl ante eu massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 					#main-content.col(style="background:green")
@@ -30,19 +30,20 @@ html.h-100(lang="en")
 						| Pellentesque sed volutpat neque. In massa sem, semper sit amet tellus vitae, ornare mattis diam. Nunc sit amet commodo libero. Phasellus a mi sed turpis tempor pulvinar semper ut erat. Donec aliquam ullamcorper leo nec elementum. Praesent consequat odio augue, ut interdum risus gravida nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum nec mauris vehicula, pharetra odio at, ullamcorper elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec convallis nibh lectus, ac mattis neque vehicula a. Nulla sollicitudin, nunc ut fermentum elementum, ligula mi aliquet justo, quis luctus nulla metus eu dui.
 						| Duis ipsum purus, eleifend ac facilisis non, tristique non odio. Phasellus ac nunc id nunc vehicula tristique ut quis lectus. Sed lacinia est risus, sed fermentum metus lobortis a. Morbi urna augue, varius at mattis ac, consequat sed lorem. Integer ut elit odio. Vivamus accumsan enim vel quam rutrum, a sollicitudin mi imperdiet. Suspendisse potenti. Aliquam imperdiet rhoncus dui, in porttitor neque consectetur a. Aenean sapien turpis, rutrum id nisi pharetra, vulputate tincidunt nisl. Donec ante leo, porttitor vitae elementum ut, mattis vel tortor. Vestibulum imperdiet egestas urna, non bibendum justo porttitor in. Sed non dolor tellus.
 						| Mauris id feugiat ex. Nam leo tellus, facilisis sit amet sapien id, gravida egestas nunc. Nulla feugiat, libero quis iaculis ornare, lectus sem malesuada libero, ut vestibulum lorem erat at dui. Aliquam vitae nisl scelerisque, vulputate felis at, laoreet sem. Sed in pharetra ante. Fusce euismod sit amet dolor ut pharetra. Cras a imperdiet ante. Nulla auctor orci ac fermentum placerat. In risus tellus, maximus vel quam id, pretium faucibus mauris. In ut nisl sit amet diam commodo bibendum. Curabitur ac enim diam. Nulla scelerisque nisi mauris, eget ultricies sapien facilisis sit amet. Donec sed quam arcu.
-				#splash.row.h-100.w-100.m-0.p-0(v-if="isVisibleSplash")
-					.col-4.d-flex.align-items-center.justify-content-end.p-0
-						img(src="res/img/icon.svg", height="100", width="100")
-					.col-8.d-flex.flex-column.align-items-start.justify-content-center.p-0
-						h1 Heimdall
-						.d-inline-flex.align-items-center
-							.spinner
-								.rect1
-								.rect2
-								.rect3
-								.rect4
-								.rect5
-							span#status Loading
+				#splash.h-100.w-100.m-0.p-0(v-if="isVisibleSplash")
+					div.row.h-100.w-100.m-0.p-0.wrapper
+						.col-4.d-flex.align-items-center.justify-content-end.p-0
+							img(src="res/img/icon.svg", height="100", width="100")
+						.col-8.d-flex.flex-column.align-items-start.justify-content-center.p-0
+							h1 Heimdall
+							.d-inline-flex.align-items-center
+								.spinner
+									.rect1
+									.rect2
+									.rect3
+									.rect4
+									.rect5
+								span#status Loading
 		script.
 			window.$ = window.jQuery = require("../node_modules/jquery/dist/jquery.min.js");
 		script(src="../node_modules/jquery/dist/jquery.min.js")
