@@ -19,7 +19,7 @@ let vm = new Vue({
 		maximizeWindow: function () {
 			let window = remote.getCurrentWindow();
 
-			if (!window.isMaximized())
+			if (!this.maximized)
 			{
 				window.maximize();
 				this.maximized = true;
@@ -48,6 +48,8 @@ let vm = new Vue({
 });
 
 $( document ).ready(function() {
+
+
 	setTimeout(function() {
 		vm.showMain();
 	}, 3000);
