@@ -22,8 +22,10 @@ html.h-100(lang="en")
 						i.fa.fa-window-close-o
 			main.container-fluid.h-100.p-0
 				#main.row.h-100.w-100.m-0(v-if="isVisibleMain")
-					#main-navigation.col-3(style="background:red")
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et massa lorem. Donec bibendum, erat non tincidunt fringilla, ipsum lacus mattis erat, vel tincidunt ligula mi eu tortor. Nulla accumsan enim lorem, sit amet pulvinar ligula imperdiet ac. Aliquam a magna aliquam, elementum enim nec, posuere sapien. Morbi rutrum massa ut libero fermentum, vitae mattis nisi hendrerit. Nullam sit amet varius lacus, sed blandit mauris. Vestibulum lectus lectus, placerat sit amet justo a, euismod pretium arcu. Nunc tincidunt, orci a lacinia tristique, purus purus lobortis risus, sit amet mattis nisl ante eu massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+					#main-navigation.col-3.p-0(style="background:red")
+						div.bookmark.d-flex.align-items-center.p-1(v-for="app in apps")
+							img.rounded(src="res/img/icon.svg", height="32", width="32")
+							span.p-1 {{ app.name }}
 					#main-content.col(style="background:green")
 						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et massa lorem. Donec bibendum, erat non tincidunt fringilla, ipsum lacus mattis erat, vel tincidunt ligula mi eu tortor. Nulla accumsan enim lorem, sit amet pulvinar ligula imperdiet ac. Aliquam a magna aliquam, elementum enim nec, posuere sapien. Morbi rutrum massa ut libero fermentum, vitae mattis nisi hendrerit. Nullam sit amet varius lacus, sed blandit mauris. Vestibulum lectus lectus, placerat sit amet justo a, euismod pretium arcu. Nunc tincidunt, orci a lacinia tristique, purus purus lobortis risus, sit amet mattis nisl ante eu massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 						| Quisque sed lacus congue, ullamcorper leo porta, facilisis elit. Duis quis congue magna, rutrum pulvinar tortor. Donec bibendum ornare mi ut feugiat. Cras eu est sit amet odio eleifend rhoncus a in nunc. Mauris blandit erat quis est egestas congue. In hac habitasse platea dictumst. Mauris vitae viverra tellus. Etiam pretium, dolor ac ornare mattis, quam nunc accumsan sapien, vitae dapibus ipsum tortor et arcu. Nunc vulputate justo sit amet risus mollis, at lobortis nibh mollis. Etiam semper porttitor rhoncus. Fusce ultricies laoreet efficitur. Vivamus ut tempus felis. Etiam pellentesque, magna luctus faucibus rutrum, nisl ex finibus risus, non ornare augue metus nec orci. Proin posuere mollis pharetra. Nullam nisl nisi, interdum mattis leo quis, posuere rhoncus sem.
@@ -37,13 +39,14 @@ html.h-100(lang="en")
 						.col-8.d-flex.flex-column.align-items-start.justify-content-center.p-0
 							h1 Heimdall
 							.d-inline-flex.align-items-center
-								.spinner
+								.spinner(v-if="!error")
 									.rect1
 									.rect2
 									.rect3
 									.rect4
 									.rect5
-								span#status Loading
+								span(v-if="!error") {{status}}
+								span.alert.alert-danger.p-1(v-else) {{status}}
 		script.
 			window.$ = window.jQuery = require("../node_modules/jquery/dist/jquery.min.js");
 		script(src="../node_modules/jquery/dist/jquery.min.js")

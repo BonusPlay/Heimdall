@@ -41,3 +41,12 @@
 #main {
 	padding-top: 60px;
 }
+
+.bookmark {
+	padding-left: 10%!important;
+	border-bottom: 1px solid black;
+}
+
+.bookmark :hover {
+
+}

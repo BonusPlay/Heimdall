@@ -3,11 +3,21 @@ const remote = require('electron').remote;
 let vm = new Vue({
 	el: '#app',
 	data: {
+		"status": "Loading",
+		"error": false,
+
 		"maximized": false,
 
 		"isVisibleTopbar": false,
 		"isVisibleMain": false,
-		"isVisibleSplash": true
+		"isVisibleSplash": true,
+
+		"apps" : [{
+			name: 'TestApp'
+		}, {
+			name: 'Athena'
+		}]
+
 	},
 	methods: {
 		minimizeWindow: function() {
@@ -48,9 +58,12 @@ let vm = new Vue({
 });
 
 $( document ).ready(function() {
+	$.get('https://api.bonusplay.pl/apps', function(data){
+		vm.apps = data;
+	}).fail(function() {
+		vm.error = true;
+		vm.status = "Error downloading data from server!";
+	});
 
-
-	setTimeout(function() {
-		vm.showMain();
-	}, 3000);
+	setTimeout(vm.showMain, 3000);
 });
