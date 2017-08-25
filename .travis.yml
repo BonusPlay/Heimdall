@@ -33,8 +33,14 @@ install:
 - yarn install
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn dist; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn dist -- --mac --win; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      echo "Running linux build.";
+      yarn dist;
+    fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      echo "Running mac & windows build.";
+      yarn dist -- --mac --win;
+    fi
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
