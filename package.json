@@ -32,7 +32,7 @@
 			"category": "Game"
 		},
 		"mac": {
-			"icon": "build/icon.hqx"
+			"icon": "build/icon.icns"
 		},
 		"win": {
 			"target": "nsis",
