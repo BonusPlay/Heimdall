@@ -25,5 +25,18 @@
 		"font-awesome": "^4.7.0",
 		"jquery": "^3.2.1",
 		"vue": "^2.4.2"
+	},
+	"build": {
+		"appId": "pl.bonusplay.heimdall",
+		"linux": {
+			"category": "Game"
+		},
+		"mac": {
+			"icon": "build/icon.hqx"
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "build/icon.ico"
+		}
 	}
 }
