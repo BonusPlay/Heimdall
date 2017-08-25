@@ -12,12 +12,7 @@ let vm = new Vue({
 		"isVisibleMain": false,
 		"isVisibleSplash": true,
 
-		"apps" : [{
-			name: 'TestApp'
-		}, {
-			name: 'Athena'
-		}]
-
+		"apps": null
 	},
 	methods: {
 		minimizeWindow: function() {
