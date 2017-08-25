@@ -41,6 +41,7 @@ script:
       echo "Running mac & windows build.";
       yarn dist -- --mac --win;
     fi
+  - ls
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
@@ -48,3 +49,11 @@ before_cache:
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
+
+deploy:
+  provider: releases
+  api_key: $GH_TOKEN
+  file:
+  skip_cleanup: true
+  on:
+    tags: true
