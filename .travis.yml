@@ -28,7 +28,7 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 
 install:
-- yarn%
+- yarn install
 
 script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn release; fi
