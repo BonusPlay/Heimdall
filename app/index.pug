@@ -6,6 +6,7 @@ html.h-100(lang="en")
 		link(rel="stylesheet", type="text/css", href="../node_modules/font-awesome/css/font-awesome.min.css")
 		link(rel="stylesheet", type="text/css", href="res/css/index.css")
 		link(rel="stylesheet", type="text/css", href="res/css/loader.css")
+		link(rel="stylesheet", type="text/css", href="res/css/ripple.css")
 		link(rel="stylesheet", type="text/css", href="res/css/animations.css")
 	body.h-100
 		#app.h-100
@@ -24,7 +25,7 @@ html.h-100(lang="en")
 			main.container-fluid.h-100.p-0
 				#main.row.h-100.w-100.m-0(v-if="isVisibleMain")
 					#main-navigation.col-3.p-0
-						div.bookmark.row.d-flex.align-items-center.p-0.m-0(v-for="app in apps" v-on:click="pickBookmark(this)")
+						div.bookmark.row.d-flex.align-items-center.p-0.m-0(v-ripple="'rgba(255, 188, 26, 0.35)'", v-for="app in apps", v-on:click="pickBookmark(this)")
 							.col-3.p-1.text-right
 								img.rounded(v-bind:src="app.icon", height="32", width="32")
 							.col-8.p-1.text-left
@@ -53,4 +54,5 @@ html.h-100(lang="en")
 		script(src="../node_modules/vue/dist/vue.js")
 		script(src="../node_modules/bootstrap/dist/js/bootstrap.min.js")
 		script(src="res/js/vue.js")
+		script(src="res/js/ripple.js")
 		script(src="res/js/index.js")
