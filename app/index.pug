@@ -24,11 +24,12 @@ html.h-100(lang="en")
 			main.container-fluid.h-100.p-0
 				#main.row.h-100.w-100.m-0(v-if="isVisibleMain")
 					#main-navigation.col-3.p-0
-						div.bookmark.row.d-flex.align-items-center.p-0(v-for="app in apps")
-							.col-4.p-1.text-right
+						div.bookmark.row.d-flex.align-items-center.p-0.m-0(v-for="app in apps" v-on:click="pickBookmark(this)")
+							.col-3.p-1.text-right
 								img.rounded(v-bind:src="app.icon", height="32", width="32")
 							.col-8.p-1.text-left
 								span {{ app.name }}
+							.col-1.bookmark-active(v-if="app.active")
 					#main-content.col(style="background:green")
 						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et massa lorem. Donec bibendum, erat non tincidunt fringilla, ipsum lacus mattis erat, vel tincidunt ligula mi eu tortor. Nulla accumsan enim lorem, sit amet pulvinar ligula imperdiet ac. Aliquam a magna aliquam, elementum enim nec, posuere sapien. Morbi rutrum massa ut libero fermentum, vitae mattis nisi hendrerit. Nullam sit amet varius lacus, sed blandit mauris. Vestibulum lectus lectus, placerat sit amet justo a, euismod pretium arcu. Nunc tincidunt, orci a lacinia tristique, purus purus lobortis risus, sit amet mattis nisl ante eu massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 				#splash.h-100.w-100.m-0.p-0(v-if="isVisibleSplash")

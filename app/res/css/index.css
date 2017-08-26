@@ -32,10 +32,6 @@
 	padding-top: 60px;
 }
 
-.bookmark {
-	border-bottom: 1px solid black;
-}
-
 /* #FF8F00 */
 
 .bookmark:hover {
@@ -43,4 +39,8 @@
 	background: #FFA000;
 	-webkit-transition: background-color 250ms cubic-bezier(0.4, 0.0, 0.2, 1), color 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	transition: background-color 250ms cubic-bezier(0.4, 0.0, 0.2, 1), color 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.bookmark-active {
+	background: #303F9F;
 }
