@@ -41,7 +41,6 @@ script:
       echo "Running mac & windows build.";
       yarn dist -- --mac --win;
     fi
-  - ls
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
