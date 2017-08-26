@@ -1,6 +1,6 @@
 {
 	"name": "Heimdall",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"description": "An application updater for Bonus applications.",
 	"main": "main.js",
 	"repository": "https://github.com/BonusPlay/Heimdall",
