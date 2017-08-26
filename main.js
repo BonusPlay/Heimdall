@@ -1,8 +1,12 @@
 const {app, BrowserWindow} = require('electron');
+require('electron-debug')({showDevTools: 'undocked'});
+const Store = require('electron-store');
+
 const path = require('path');
 const url = require('url');
 
 let win;
+const store = new Store();
 
 function createWindow () {
 	win = new BrowserWindow({
@@ -17,6 +21,11 @@ function createWindow () {
 		protocol: 'file:',
 		slashes: true
 	}));
+
+	if(store.has('development'))
+		win.webContents.openDevTools();
+
+	console.log(store.path);
 
 	win.on('closed', () => {
 		win = null;

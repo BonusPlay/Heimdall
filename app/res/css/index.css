@@ -26,6 +26,7 @@
 	background-color: #261302;
 	color: #AC7301;
 	-webkit-user-select: none;
+	cursor: default;
 }
 
 #main {
@@ -33,6 +34,11 @@
 }
 
 /* #FF8F00 */
+
+.bookmark {
+	-webkit-user-select: none;
+	cursor: default;
+}
 
 .bookmark:hover {
 	color: white;
