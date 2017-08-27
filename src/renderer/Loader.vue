@@ -11,7 +11,7 @@
 </template>
 
 <script>
-	import Stretch from 'vue-loading-spinner/src/components/Stretch.vue'
+	import Stretch from 'vue-loading-spinner/src/components/Stretch.vue';
 
 	export default {
 		name: 'loader',
