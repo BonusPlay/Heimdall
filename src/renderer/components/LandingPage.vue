@@ -1,6 +1,6 @@
 <template lang="pug">
 	#wrapper
-		img#logo(src="~@/assets/logo.png", alt="electron-vue")
+		img#logo(src="~@/assets/logo.svg", alt="electron-vue")
 		main
 			.left-side
 				.title

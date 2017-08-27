@@ -2,7 +2,7 @@
 	#app.h-100
 		.row.h-100.w-100.m-0.p-0
 			.col-4.d-flex.align-items-center.justify-content-end.p-0
-				img(src="~@/assets/logo.png", height="100", width="100")
+				img(src="~@/assets/logo.svg", height="100", width="100")
 			.col-8.d-flex.flex-column.align-items-start.justify-content-center.p-0
 				h1 Heimdall
 				.d-inline-flex.align-items-center
