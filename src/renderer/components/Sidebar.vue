@@ -1,5 +1,5 @@
 <template lang="pug">
-	div
+	.col-3.p-0
 		#sidebar-header
 			| This is a sidebar header
 		.container

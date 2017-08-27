@@ -1,8 +1,9 @@
 <template lang="pug">
-	#app
+	#app.h-100.w-100
 		topbar
-		sidebar
-		app-page
+		#wrapper.h-100.w-100.row
+			sidebar
+			app-page
 </template>
 
 <script>
@@ -23,5 +24,7 @@
 </script>
 
 <style lang="sass">
-
+	#wrapper
+		padding-top: 60px
+		margin: 0
 </style>

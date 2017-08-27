@@ -1,5 +1,5 @@
 <template lang="pug">
-	#topbar
+	#topbar.w-100
 		b-navbar.justify-content-between(sticky=true, variant="primary", type="dark")
 			b-navbar-brand(href="#")
 				img.rounded(src="~@/assets/logo.svg", height="32", width="32")
@@ -58,6 +58,8 @@
 
 <style scoped lang="sass">
 	#topbar
+		top: 0
+		position: absolute
 		-webkit-app-region: drag
 
 	.bg-primary
