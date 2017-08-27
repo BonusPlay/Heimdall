@@ -16,8 +16,12 @@ import Ripple from 'vue-ripple-directive';
 Vue.directive('ripple', Ripple)
 */
 
+// vue-awesome
+import Icon from 'vue-awesome/components/Icon.vue';
+Vue.component('icon', Icon);
+
 // 	Setup Vue
-import App from './App';
+import App from './App.vue';
 
 new Vue({
 	components: { App },
