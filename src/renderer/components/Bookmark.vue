@@ -1,11 +1,12 @@
 <template lang="pug">
-	.col
-		button.button(ripple) Test Button
+	b-list-group-item
+		img.rounded(v-bind:src="", height="32", width="32")
+		| test item
 </template>
 
 <script>
 	export default {
-		name: 'app-page'
+		name: 'bookmark'
 	}
 </script>
 

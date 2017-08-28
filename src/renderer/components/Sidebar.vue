@@ -2,13 +2,18 @@
 	.col-3.p-0
 		#sidebar-header
 			| This is a sidebar header
-		.container
-			| This is a sidebar container
+		b-list-group.container
+			bookmark
 </template>
 
 <script>
+	import Bookmark from './Bookmark.vue'
+
 	export default {
-		name: 'sidebar'
+		name: 'sidebar',
+		components: {
+			Bookmark
+		}
 	}
 </script>
 
