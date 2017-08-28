@@ -1,7 +1,7 @@
 <template lang="pug">
-	#app.h-100
-		.row.h-100.w-100.m-0.p-0
-			.col-4.d-flex.align-items-center.justify-content-end.p-0
+	#app
+		v-layout
+			v-flex.text-xs-right(xs4)
 				img(src="~@/assets/logo.svg", height="100", width="100")
 			.col-8.d-flex.flex-column.align-items-start.justify-content-center.p-0
 				h1 Heimdall
@@ -21,7 +21,10 @@
 	}
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
+	html
+		overflow: hidden
+
 	#app
 		background: #261302
 		color: #AC7301

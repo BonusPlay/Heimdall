@@ -1,17 +1,18 @@
 <template lang="pug">
 	#topbar.w-100
-		b-navbar.justify-content-between(sticky=true, variant="primary", type="dark")
-			b-navbar-brand(href="#")
-				img.rounded(src="~@/assets/logo.svg", height="32", width="32")
-				span.p-1 Heimdall
-			div
-				button.nav-item.btn.btn-outline-danger(type="button", v-on:click="minimizeWindow")
-					icon(name="window-minimize")
-				button.nav-item.btn.btn-outline-danger(type="button", v-on:click="maximizeWindow")
-					icon(name="window-restore", v-if="maximized")
-					icon(name="window-maximize", v-else)
-				button.nav-item.btn.btn-outline-danger(type="button", v-on:click="closeWindow")
-					icon(name="window-close-o")
+		//
+			b-navbar.justify-content-between(sticky=true, variant="primary", type="dark")
+				b-navbar-brand(href="#")
+					img.rounded(src="~@/assets/logo.svg", height="32", width="32")
+					span.p-1 Heimdall
+				div
+					button.nav-item.btn.btn-outline-danger(type="button", v-on:click="minimizeWindow")
+						icon(name="window-minimize")
+					button.nav-item.btn.btn-outline-danger(type="button", v-on:click="maximizeWindow")
+						icon(name="window-restore", v-if="maximized")
+						icon(name="window-maximize", v-else)
+					button.nav-item.btn.btn-outline-danger(type="button", v-on:click="closeWindow")
+						icon(name="window-close-o")
 </template>
 
 <script>

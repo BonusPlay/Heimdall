@@ -56,12 +56,13 @@ function createLoaderWindow() {
 		loaderWindow.loadURL(loaderURL);
 
 		loaderWindow.show();
-
+/*
 		setTimeout(() => {
 			resolve();
 			if(loaderWindow !== null)
 				loaderWindow.close();
 		}, 3000);
+*/
 	});
 }
 
