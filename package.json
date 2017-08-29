@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"author": "BonusPlay <root@bonusplay.pl>",
 	"description": "An application updater for Bonus applications.",
-	"license": null,
+	"license": "https://bonusplay.pl/license",
 	"main": "./dist/electron/main.js",
 	"scripts": {
 		"build": "node .electron-vue/build.js && electron-builder",

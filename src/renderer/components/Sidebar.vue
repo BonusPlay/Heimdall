@@ -1,9 +1,7 @@
 <template lang="pug">
 	.col-3.p-0
-		#sidebar-header
-			| This is a sidebar header
 		b-list-group.container
-			bookmark
+			bookmark(v-for="(app, index) in this.$parent.apps" v-bind:key="index" v-bind:app="app")
 </template>
 
 <script>
