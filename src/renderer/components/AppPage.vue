@@ -1,11 +1,16 @@
 <template lang="pug">
 	.col
-		button.button(ripple) Test Button
+		button.button(v-on:click="hit") Test Button
 </template>
 
 <script>
 	export default {
-		name: 'app-page'
+		name: 'app-page',
+		methods: {
+			hit: function() {
+				console.log(this);
+			}
+		}
 	}
 </script>
 

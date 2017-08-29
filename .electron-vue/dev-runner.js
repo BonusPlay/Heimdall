@@ -36,6 +36,7 @@ function logStats(proc, data) {
 		log += `  ${data}\n`;
 	}
 
+	log = log.replace(/\n$/, "");
 	log += '\n' + chalk.yellow.bold(`┗ ${new Array(28 + 1).join('-')}`) + '\n';
 
 	console.log(log);
@@ -140,6 +141,8 @@ function electronLog(data, color) {
 	data.forEach(line => {
 		log += `  ${line}\n`;
 	});
+	log = log.replace(/\n$/, "");
+
 	if (/[0-9A-z]+/.test(log))
 	{
 		console.log(

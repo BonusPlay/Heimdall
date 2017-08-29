@@ -11,6 +11,8 @@
 	import Sidebar from '@/components/Sidebar';
 	import AppPage from '@/components/AppPage';
 
+	import * as types from './store/mutation-types';
+
 	export default {
 		name: 'app',
 		components: {
@@ -18,23 +20,8 @@
 			Topbar,
 			Sidebar
 		},
-		data() {
-			return {
-				apps: null
-			}
-		},
 		created: function() {
-			let vm = this;
-
-			fetch('https://api.bonusplay.pl/apps')
-			.then(function(resp) {
-				if (resp.status !== 200)
-					console.err('ABORT');
-
-				resp.json().then(function(data) {
-					vm.apps = data;
-				});
-			});
+			this.$store.dispatch(types.UPDATE_LIST);
 		}
 	}
 </script>

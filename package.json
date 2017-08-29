@@ -58,7 +58,8 @@
 		"vue-awesome": "^2.3.1",
 		"vue-electron": "^1.0.6",
 		"vue-loading-spinner": "^1.0.10",
-		"vue-ripple-directive": "^1.0.12"
+		"vue-ripple-directive": "^1.0.12",
+		"vuex": "^2.3.1"
 	},
 	"devDependencies": {
 		"babel-core": "^6.25.0",
