@@ -35,11 +35,11 @@ install:
 script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       echo "Running linux build.";
-      yarn dist;
+      yarn build;
     fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       echo "Running mac & windows build.";
-      yarn dist -- --mac --win;
+      yarn build -- --mac --win;
     fi
 
 before_cache:
