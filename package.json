@@ -1,6 +1,6 @@
 {
 	"name": "Heimdall",
-	"version": "0.0.0",
+	"version": "0.5.0",
 	"author": "BonusPlay <root@bonusplay.pl>",
 	"description": "An application updater for Bonus applications.",
 	"license": "https://bonusplay.pl/license",
