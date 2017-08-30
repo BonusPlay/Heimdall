@@ -17,13 +17,13 @@ import Icon from 'vue-awesome/components/Icon.vue';
 Vue.component('icon', Icon);
 
 // 	Setup Vue
-import Store from './store';
 import App from './App.vue';
-
-console.log(Store);
+import store from './store';
 
 new Vue({
-	Store,
+	store,
 	components: { App },
 	template: '<App/>'
 }).$mount('#app');
+
+store.dispatch('getApps');

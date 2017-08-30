@@ -1,14 +1,15 @@
 <template lang="pug">
 	.col
-		button.button(v-on:click="hit") Test Button
+		| {{ app.name }} {{ app.version }}
 </template>
 
 <script>
 	export default {
 		name: 'app-page',
-		methods: {
-			hit: function() {
-				console.log(this);
+		computed: {
+			app () {
+				let selected = this.$store.state.App.selected;
+				return selected ? selected : {};
 			}
 		}
 	}

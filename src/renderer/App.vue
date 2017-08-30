@@ -19,9 +19,6 @@
 			AppPage,
 			Topbar,
 			Sidebar
-		},
-		created: function() {
-			this.$store.dispatch(types.UPDATE_LIST);
 		}
 	}
 </script>

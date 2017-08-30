@@ -2,44 +2,45 @@ import * as types from '../mutation-types';
 
 const state = {
 	appList: [],
-	app: null
+	selected: null
 };
 
 // getters
 const getters = {
-	app: state => state.app
+	selected: state => state.selected,
+	appList: state => state.appList
 };
 
 // actions
 const actions = {
 	getApps ({ commit }) {
-		return new Promise((resolve, reject) => {
-			fetch('https://api.bonusplay.pl/apps')
-			.then(function(resp) {
-				if (resp.status !== 200)
-					throw new Error('Api status is not 200');
+		fetch('https://api.bonusplay.pl/apps')
+		.then(function(resp) {
+			if (resp.status !== 200)
+				throw new Error('Api status is not 200');
 
-				resp.json()
-				.then(function(data) {
-					commit(types.UPDATE_LIST, data);
-					resolve();
-				})
-				.catch(function(err2) {
-					throw new Error('Error parsing response');
-				});
+			resp.json()
+			.then(function(data) {
+				commit(types.UPDATE_LIST, data);
+				commit(types.SET_APP, data[0]);
 			})
-			.catch(function(err) {
-				console.err(err);
-				reject();
+			.catch(function(err2) {
+				console.log(err2);
 			});
+		})
+		.catch(function(err) {
+			console.err(err);
 		});
+	},
+	setApp ({commit}, app) {
+		commit(types.SET_APP, app);
 	}
 };
 
 // mutations
 const mutations = {
-	[types.SET_APP] (state, id) {
-		state.app = id;
+	[types.SET_APP] (state, app) {
+		state.selected = app;
 	},
 	[types.UPDATE_LIST] (state, apps) {
 		state.appList = apps;
