@@ -1,4 +1,4 @@
-# Heimdall
+# [![Build Status](https://travis-ci.com/BonusPlay/Heimdall.svg?token=rhjKuzwnUbDZrytqqakX&branch=master)](https://travis-ci.com/BonusPlay/Heimdall) Heimdall
 
 > An application updater for Bonus applications.
 
