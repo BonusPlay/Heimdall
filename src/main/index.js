@@ -14,7 +14,7 @@ const winURL = process.env.NODE_ENV === 'development'
 
 const loaderURL = process.env.NODE_ENV === 'development'
 	? 'http://localhost:9080/loader.html'
-	: 'file://${__dirname}/loader.html';
+	: `file://${__dirname}/loader.html`;
 
 function createMainWindow() {
 	return new Promise((resolve, reject) => {
@@ -55,7 +55,9 @@ function createLoaderWindow() {
 
 		loaderWindow.loadURL(loaderURL);
 
-		loaderWindow.show();
+		loaderWindow.on('ready-to-show', () => {
+			loaderWindow.show();
+		});
 
 		setTimeout(() => {
 			resolve();

@@ -74,7 +74,7 @@ function build() {
 		console.log(`\n  ${errorLog}failed to build renderer process`);
 		console.error(`\n${err}\n`);
 		process.exit(1);
-	})
+	});
 }
 
 function pack(config) {
@@ -102,8 +102,8 @@ function pack(config) {
 					colors: true
 				}));
 			}
-		})
-	})
+		});
+	});
 }
 
 function web() {
@@ -118,7 +118,7 @@ function web() {
 		}));
 
 		process.exit();
-	})
+	});
 }
 
 function greeting() {

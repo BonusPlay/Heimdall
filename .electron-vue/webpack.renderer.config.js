@@ -18,13 +18,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  * that provide pure *.vue files that need compiling
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/webpack-configurations.html#white-listing-externals
  */
-let whiteListedModules = ['vue'];
+let whiteListedModules = ['vue', 'bootstrap-vue', 'vue-awesome', 'vue-loading-spinner'];
 
 let rendererConfig = {
 	devtool: '#cheap-module-eval-source-map',
 	entry: {
-		main: path.join(__dirname, '../src/renderer/main.js'),
-		loader: path.join(__dirname, '../src/renderer/loader.js')
+		renderer_main: path.join(__dirname, '../src/renderer/main.js'),
+		renderer_loader: path.join(__dirname, '../src/renderer/loader.js')
 	},
 	externals: [
 		...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
@@ -116,11 +116,11 @@ let rendererConfig = {
 			nodeModules: process.env.NODE_ENV !== 'production'
 				? path.resolve(__dirname, '../node_modules')
 				: false,
-			chunks: ['main']
+			chunks: ['renderer_main']
 		}),
 		new HtmlWebpackPlugin({
 			filename: 'loader.html',
-			template: path.resolve(__dirname, '../src/loader.ejs'),
+			template: path.resolve(__dirname, '../src/index.ejs'),
 			minify: {
 				collapseWhitespace: true,
 				removeAttributeQuotes: true,
@@ -129,7 +129,7 @@ let rendererConfig = {
 			nodeModules: process.env.NODE_ENV !== 'production'
 				? path.resolve(__dirname, '../node_modules')
 				: false,
-			chunks: ['loader']
+			chunks: ['renderer_loader']
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin()
